@@ -2,7 +2,9 @@
 
 pkgname=lightbar-git
 _gitname=lightbar-rb
-pkgver=0.0.1
+_gemname=lightbar
+_gemversion=0.0.1
+pkgver=20200318.r16.d770ddc
 pkgrel=1
 pkgdesc='Lightbar PWM Tweening Controller'
 
@@ -35,10 +37,8 @@ package() {
 
   cd "$_gitname"
 
-  gem install --ignore-dependencies --no-user-install -N -i "$pkgdir/$_gemdir" -n "$pkgdir/usr/bin" pkg/$pkgname-$pkgver.gem
-  rm "$pkgdir/$_gemdir/cache/$pkgname-$pkgver.gem"
-
-  cd "$_rootdir"
+  # TODO: Why not move into `make install` within lightbar-rb?
+  gem install --ignore-dependencies --no-user-install -N -i "$pkgdir/$_gemdir" -n "$pkgdir/usr/bin" pkg/$_gemname-$_gemversion.gem
   make DESTDIR="$pkgdir" install
 }
 
