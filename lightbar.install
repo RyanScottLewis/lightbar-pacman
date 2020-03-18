@@ -1,0 +1,17 @@
+post_install() {
+  groupadd lightbar
+
+  echo
+  echo "Use 'systemctl enable --now lightbar' to enable system daemon."
+  echo "Add users to the 'lightbar' group to allow them to control the system daemon."
+  echo
+  echo "  gpasswd -a user lightbar"
+  echo
+  echo "Fade light at boot by enabling the 'lightbar-fade' service."
+  echo
+}
+
+post_remove() {
+  groupdel lightbar
+}
+
