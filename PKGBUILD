@@ -4,7 +4,7 @@ pkgname=lightbar-git
 _gitname=lightbar-rb
 _gemname=lightbar
 _gemversion=0.0.1
-pkgver=20200318.r16.d770ddc
+pkgver=20200323.r30.ebe82f7
 pkgrel=1
 pkgdesc='Lightbar PWM Tweening Controller'
 
