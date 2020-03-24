@@ -7,8 +7,6 @@ post_install() {
   echo
   echo "  gpasswd -a user lightbar"
   echo
-  echo "Fade light at boot by enabling the 'lightbar-fade' service."
-  echo
 }
 
 post_remove() {
